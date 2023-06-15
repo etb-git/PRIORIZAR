@@ -48,10 +48,6 @@ from sklearn import preprocessing
 
 
 
-import spacy
-
-
-
 palabras = pd.read_csv('/content/nombres.txt', delimiter='\t')
 
 palabras_unicas = palabras['acosta'].tolist()

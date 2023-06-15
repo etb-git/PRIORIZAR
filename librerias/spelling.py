@@ -5,6 +5,10 @@ import pandas as pd
 spell = SpellChecker(language='es')
 
 # Set of words to skip correction
+## prueba
+
+
+
 skip_words = {"hbo", "winsport", "svas", "directv"}
 
 def correct_sentence(sentence):
