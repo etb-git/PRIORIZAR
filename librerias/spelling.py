@@ -19,5 +19,5 @@ def correct_sentence(sentence):
     corrected_words = [word if word in skip_words else unidecode(spell.correction(word) or word) for word in words]
 
     corrected_sentence = ' '.join(corrected_words)
-    print("terminando")
+    
     return corrected_sentence
