@@ -4,6 +4,11 @@ import re
 
 ### prueba
 
+
+
+
+
+ 
 def clean_text(text):
   
 
@@ -22,9 +27,15 @@ def clean_text(text):
     
     
 
+    text=re.sub(r'^.*?cuenta de facturacion\s*',"",text, flags=re.IGNORECASE)
+    text=re.sub(r'^.*?solicitud del cliente\s*',"",text, flags=re.IGNORECASE)
+    text=re.sub(r'^.*?cuenta:\s*',"",text, flags=re.IGNORECASE)
+
+    text=re.sub(r'^.*?cedula de ciudadania\s*',"",text, flags=re.IGNORECASE)
+    text=re.sub(r'^.*?//cliente\s*',"",text, flags=re.IGNORECASE)
 
     text=re.sub(r'^.*?aseg//*',"",text, flags=re.IGNORECASE)
-    text=re.sub(r'^.*?solicitud del cliente\s*',"",text, flags=re.IGNORECASE)
+   
     text=re.sub(r'^.*?motivo de retiro\s*',"",text, flags=re.IGNORECASE)
     text=re.sub(r'^.*?motivo de llamada\s*',"",text, flags=re.IGNORECASE)
     text=re.sub(r'^.*?motivo de la llamada\s*',"",text, flags=re.IGNORECASE)
@@ -244,6 +255,8 @@ def clean_text(text):
     text = re.sub(r'\binf\b', 'informacion', text)
 
     text = re.sub(r'informaci', 'informacion', text)
+    text = re.sub(r"ntiene", "tiene", text)
+    text = re.sub(r"p. m.", "", text)
     
 
     #numero documento
