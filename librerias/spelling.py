@@ -19,7 +19,7 @@ def correct_sentence(sentence):
     words = sentence.split()
     corrected_words = []
     
-    corrected_words = [word if word in skip_words else unidecode(spell.correction(wrd) or word) for word in words]
+    corrected_words = [word if word in skip_words else unidecode(spell.correction(word) or word) for word in words]
 
     corrected_sentence = ' '.join(corrected_words)
    
