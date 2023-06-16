@@ -48,19 +48,38 @@ from sklearn import preprocessing
 
 
 
+<<<<<<< Updated upstream
+palabras = pd.read_csv('/content/nombres.txt', delimiter='\t')
+=======
 import spacy
 
 
 
-palabras = pd.read_csv('/content/nombres.txt', delimiter='\t')
+palabras = pd.read_csv('/content/PRIORIZAR/data/nombres.txt', delimiter='\t')
+>>>>>>> Stashed changes
 
 palabras_unicas = palabras['acosta'].tolist()
 
 
+#JUAN JOSE MENJURA CORTES
+
+#SRA ANGELA
+
+#pqr
+
+
+
 sw_list = stopwords.words('spanish')
 sw_list += list(string.punctuation)
-sw_list += ["ion","cop","whast p","rox","b","dg","ion","app","elmer","usuario","yohana poveda","dirar","ud","atar","z","''", '""', '...', '``', '’', '“','’','nn','él','tú','septiembre','hra','agosto','mayo','junio','julio','octubre','diciembre','enero','febrero','marzo','abril','queda','bot','$','(','correo',"email" ,"f","id",'whats','sur','”','to','titular', 'in','nombre' ,'co','sr','bis','‘','sur in', 'ac','‘','lt','cl',"pi","hotmail","departamentobogota","ciudadbogota","'",'-','--' ,'@hotmail','demá','facebook','razón','cliente','tel','cel','dir','mdmpqr',
-'—', '_','int','gmail','com','@','re','ok','from','min','reply','avg','max','time','manifiesta','ttl','bytes','seq','ms','Reportó','Descripcion','última','atención','a','su','línea','linea','Gracias','preferirnos','gracias','comunicación','en','la','que','cédula','cedula','aga','luego','número','documento','indica','sido','aclara','solo','encuentra','comunica','linar','direccion','whatsapp','what','dirección','dire ion']
+sw_list += ["ion","cop","whast p","rox","b","dg","ion","app","elmer","usuario","yohana poveda","dirar","ud","atar",
+"z","''", '""', '...', '``', '’', '“','’','nn','él','tú','septiembre','hra','agosto','mayo','junio','julio','octubre','diciembre','enero','febrero',
+'marzo','abril','queda','bot','$','(','correo',"email" ,"f","id",'whats','sur','”','to','titular', 'in','nombre' ,'co','sr','bis','‘','sur in', 'ac',
+'‘','lt','cl',"pi","hotmail","departamentobogota","ciudadbogota","'",'-','--' ,'@hotmail','demá','facebook','razón','cliente','tel','cel','dir','mdmpqr',
+'—', '_','int','gmail','com','@','re','ok','from','min','reply','avg','max','time','manifiesta','ttl','bytes','seq','ms','Reportó','Descripcion','última','atención',
+'a','su','línea','linea','Gracias','preferirnos','gracias','comunicación','en','la','que','cédula','cedula','aga','luego','número','documento','indica',
+'sido','aclara','solo','encuentra','comunica','linar','direccion','whatsapp','what','dirección','dire ion','pqr','juan','jose','menjura','cortes','sra',
+'angela','rf','ref','ipc','cc','etb','crm','ct','chat','megas','tec','ftth']
+
 
 sw_list = sw_list +palabras_unicas
 
