@@ -51,7 +51,7 @@ def clean_text(text):
     text=re.sub(r'noviembre', "", text)
     text=re.sub(r'diciembre', "", text)
     text=re.sub(r'febrero', "", text)
-    text=re.sub(r'enero', "", text)
+    #text=re.sub(r'enero', "", text)
     text=re.sub(r'marzo', "", text)
     text=re.sub(r'abril', "", text)
     text=re.sub(r'mayo', "", text)
