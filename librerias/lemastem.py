@@ -46,8 +46,8 @@ from sklearn import preprocessing
 
 
 
-palabras = pd.read_csv('/content/nombres.txt', delimiter='\t')
-=======
+palabras = pd.read_csv('/content/PRIORIZAR/data/nombres.txt', delimiter='\t')
+
 import spacy
 
 
