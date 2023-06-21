@@ -18,13 +18,27 @@ def clean_text(text):
 
     #text = re.sub(r"Motivo de llamada:\s*(.*)", r'\1', text)
 
-
+   
     #text=re.sub(r'^.*?(MOTIVO:)', r'\1', text)
 
-    
-    
+    text=re.sub(r'mypimes', " ", text)
 
+
+    text=re.sub(r'llama da', "llamada", text)
+    text=re.sub(r'valdiar', "validar", text)
+
+    text=re.sub(r'^.*?desea validar\s*',"",text, flags=re.IGNORECASE)
+
+    text=re.sub(r'^.*?se comunica\s*',"",text, flags=re.IGNORECASE)
+
+    text=re.sub(r'^.*?peticion:\s*',"",text, flags=re.IGNORECASE)
+
+    text=re.sub(r'^.*?cliente desea\s*',"",text, flags=re.IGNORECASE)
+
+
+    text=re.sub(r'^.*?cliente requiere\s*',"",text, flags=re.IGNORECASE)
     text=re.sub(r'^.*?cuenta de facturacion\s*',"",text, flags=re.IGNORECASE)
+    text=re.sub(r'^.*?cliente se comunica\s*',"",text, flags=re.IGNORECASE)
     text=re.sub(r'^.*?solicitud del cliente\s*',"",text, flags=re.IGNORECASE)
     text=re.sub(r'^.*?cuenta:\s*',"",text, flags=re.IGNORECASE)
 
@@ -228,12 +242,12 @@ def clean_text(text):
     text=re.sub(r'win sports+', "winsport", text)
     text=re.sub(r'wing sport', "winsport", text)
     text=re.sub(r'win', "winsport", text)
-
+  
     text=re.sub(r'sva', "svas", text)
 
     text=re.sub(r'barragan', "", text)
 
-
+    text=re.sub(r'comun ica', "comunica", text)
 
 
 
@@ -258,6 +272,12 @@ def clean_text(text):
     text = re.sub(r"in formacion", "informacion", text)
     text = re.sub(r"informes", "informacion", text)
     
+    text = re.sub(r"por que", "porque", text)
+    text = re.sub(r"ley", "", text)
+
+    text = re.sub(r"por que", "porque", text)
+    text = re.sub(r"actulaizacionde", "actualizacion", text)
+
 
     #numero documento
     #numero de conexion

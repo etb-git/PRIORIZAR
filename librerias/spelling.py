@@ -9,7 +9,7 @@ spell = SpellChecker(language='es')
 
 print("hola")
 
-skip_words = {"hbo", "winsport", "svas", "directv","etb","facturados"}
+skip_words = {"hbo", "winsport", "svas", "directv","etb","facturados","paramount"}
 
 
 def correct_sentence(sentence):

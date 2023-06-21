@@ -67,11 +67,11 @@ nuevos_nombres = df['AARON'].str.lower().tolist()
 
 
 
-
-
 sw_list = stopwords.words('spanish')
 sw_list += list(string.punctuation)
-sw_list += ["ion","cop","whast p","rox","in","ap","whastapp","ciudadania","b","dg","ion","app","elmer","usuario","aaron"
+sw_list += ["ion","cop","whast p","rox","in","mayerli","bermuda","feb","edwin","beymar","otalvaro","carmona","pablo",
+"aguirre","pineda"
+"ap","twitter","whastapp","ciudadania","b","dg","ion","app","elmer","usuario","aaron"
 "yohana poveda","dirar","ud","atar","jorge","alejandro","sterns","mogollon","edwin","beymar","otalvaro","carmona","ciudadania","ap","a","saaw"
 "z","''", '""', '...', '``', '’', '“','’','nn','él','tú','septiembre','hra','agosto','mayo','junio','julio','octubre','diciembre','enero','febrero',
 'marzo','abril','queda','bot','$','(','correo',"email" ,"f","id",'whats','sur','”','to','titular', 'in','nombre' ,'co','sr','bis','‘','sur in', 'ac',
@@ -82,7 +82,14 @@ sw_list += ["ion","cop","whast p","rox","in","ap","whastapp","ciudadania","b","d
 'angela','rf','ref','ipc','cc','etb','crm','ct','chat','megas','tec','ftth']
 
 
-sw_list = sw_list +palabras_unicas+nuevos_nombres
+sw_list = sw_list +palabras_unicas
+
+sw_list=sw_list+nuevos_nombres
+
+
+
+print(len(sw_list))
+
 
 sw_set = set(sw_list)
 
