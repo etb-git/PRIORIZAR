@@ -46,32 +46,29 @@ from sklearn import preprocessing
 
 
 
+palabras = pd.read_csv('/content/PRIORIZAR/data/nombres.txt', delimiter='\t')
 
-
-<<<<<<< Updated upstream
-palabras = pd.read_csv('/content/nombres.txt', delimiter='\t')
-=======
 import spacy
 
 
+###### lectura de STOP WORDS
 
 palabras = pd.read_csv('/content/PRIORIZAR/data/nombres.txt', delimiter='\t')
->>>>>>> Stashed changes
 
 palabras_unicas = palabras['acosta'].tolist()
 
+# Read the Excel file
+df = pd.read_excel('/content/PRIORIZAR/data/ListadoNombresApellidos.xlsx')
 
-#JUAN JOSE MENJURA CORTES
+# Create a list from a specific column
+nuevos_nombres = df['AARON'].str.lower().tolist()
 
-#SRA ANGELA
-
-#pqr
 
 
 
 sw_list = stopwords.words('spanish')
 sw_list += list(string.punctuation)
-sw_list += ["ion","cop","whast p","rox","b","dg","ion","app","elmer","usuario","yohana poveda","dirar","ud","atar",
+sw_list += ["ion","cop","whast p","rox","in","ap","ciudadania","b","dg","ion","app","elmer","usuario","yohana poveda","dirar","ud","atar",
 "z","''", '""', '...', '``', '’', '“','’','nn','él','tú','septiembre','hra','agosto','mayo','junio','julio','octubre','diciembre','enero','febrero',
 'marzo','abril','queda','bot','$','(','correo',"email" ,"f","id",'whats','sur','”','to','titular', 'in','nombre' ,'co','sr','bis','‘','sur in', 'ac',
 '‘','lt','cl',"pi","hotmail","departamentobogota","ciudadbogota","'",'-','--' ,'@hotmail','demá','facebook','razón','cliente','tel','cel','dir','mdmpqr',
@@ -81,7 +78,7 @@ sw_list += ["ion","cop","whast p","rox","b","dg","ion","app","elmer","usuario","
 'angela','rf','ref','ipc','cc','etb','crm','ct','chat','megas','tec','ftth']
 
 
-sw_list = sw_list +palabras_unicas
+sw_list = sw_list +palabras_unicas+nuevos_nombres
 
 sw_set = set(sw_list)
 
