@@ -66,9 +66,13 @@ nuevos_nombres = df['AARON'].str.lower().tolist()
 
 
 
+
+
+
 sw_list = stopwords.words('spanish')
 sw_list += list(string.punctuation)
-sw_list += ["ion","cop","whast p","rox","in","ap","whastapp","ciudadania","b","dg","ion","app","elmer","usuario","yohana poveda","dirar","ud","atar",
+sw_list += ["ion","cop","whast p","rox","in","ap","whastapp","ciudadania","b","dg","ion","app","elmer","usuario","aaron"
+"yohana poveda","dirar","ud","atar","jorge","alejandro","sterns","mogollon","edwin","beymar","otalvaro","carmona","ciudadania","ap","a","saaw"
 "z","''", '""', '...', '``', '’', '“','’','nn','él','tú','septiembre','hra','agosto','mayo','junio','julio','octubre','diciembre','enero','febrero',
 'marzo','abril','queda','bot','$','(','correo',"email" ,"f","id",'whats','sur','”','to','titular', 'in','nombre' ,'co','sr','bis','‘','sur in', 'ac',
 '‘','lt','cl',"pi","hotmail","departamentobogota","ciudadbogota","'",'-','--' ,'@hotmail','demá','facebook','razón','cliente','tel','cel','dir','mdmpqr',
