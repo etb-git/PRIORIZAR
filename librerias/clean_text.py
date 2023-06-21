@@ -5,9 +5,6 @@ import re
 ### prueba
 
 
-
-
-
  
 def clean_text(text):
   
@@ -257,6 +254,9 @@ def clean_text(text):
     text = re.sub(r'informaci', 'informacion', text)
     text = re.sub(r"ntiene", "tiene", text)
     text = re.sub(r"p. m.", "", text)
+
+    text = re.sub(r"in formacion", "informacion", text)
+    text = re.sub(r"informes", "informacion", text)
     
 
     #numero documento
