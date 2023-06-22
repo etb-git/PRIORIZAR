@@ -4,14 +4,16 @@ import re
 
 ### prueba
 
-
+print('entro2')
  
 def clean_text(text):
   
+    text=re.sub(r".*// cliente", " ", text, flags=re.IGNORECASE)
+
 
     text=re.sub(r'No exitoso - RF-', "otros", text) 
     text = text.lower()
-    text = re.sub(r'[^\w\s]', '', re.sub(r'[áéíóú]', lambda m: {'á':'a', 'é':'e', 'í':'i', 'ó':'o', 'ú':'u'}[m.group(0)], text))
+    #text = re.sub(r'[^\w\s]', '', re.sub(r'[áéíóú]', lambda m: {'á':'a', 'é':'e', 'í':'i', 'ó':'o', 'ú':'u'}[m.group(0)], text))
   
     text =re.sub(r'ù', 'u', text)
     text = re.sub(r"[0-9]", "", text)
@@ -43,7 +45,7 @@ def clean_text(text):
     text=re.sub(r'^.*?cuenta:\s*',"",text, flags=re.IGNORECASE)
 
     text=re.sub(r'^.*?cedula de ciudadania\s*',"",text, flags=re.IGNORECASE)
-    text=re.sub(r'^.*?//cliente\s*',"",text, flags=re.IGNORECASE)
+    #text=re.sub(r'^.*?//cliente\s*',"",text, flags=re.IGNORECASE)
 
     text=re.sub(r'^.*?aseg//*',"",text, flags=re.IGNORECASE)
    
@@ -54,8 +56,10 @@ def clean_text(text):
     text=re.sub(r'^.*?llamada:\s*',"",text, flags=re.IGNORECASE)
 
     text=re.sub(r'^.*?cliente quiere\s*',"",text, flags=re.IGNORECASE)
-
-    text=re.sub(r'^.*?// cliente\s*',"",text, flags=re.IGNORECASE)
+    
+  
+    
+    
 
     text=re.sub(r'^.*?ap\s*',"",text, flags=re.IGNORECASE)
 
