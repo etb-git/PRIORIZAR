@@ -27,7 +27,7 @@ def clean_text(text):
     text=re.sub(r'llama da', "llamada", text)
     text=re.sub(r'valdiar', "validar", text)
 
-    text=re.sub(r'^.*?desea validar\s*',"",text, flags=re.IGNORECASE)
+    #text=re.sub(r'^.*?desea validar\s*',"",text, flags=re.IGNORECASE)
 
     text=re.sub(r'^.*?se comunica\s*',"",text, flags=re.IGNORECASE)
 
@@ -51,6 +51,13 @@ def clean_text(text):
     text=re.sub(r'^.*?motivo de llamada\s*',"",text, flags=re.IGNORECASE)
     text=re.sub(r'^.*?motivo de la llamada\s*',"",text, flags=re.IGNORECASE)
     text=re.sub(r'^.*?motivo\s*',"",text, flags=re.IGNORECASE)
+    text=re.sub(r'^.*?llamada:\s*',"",text, flags=re.IGNORECASE)
+
+    text=re.sub(r'^.*?cliente quiere\s*',"",text, flags=re.IGNORECASE)
+
+    text=re.sub(r'^.*?// cliente\s*',"",text, flags=re.IGNORECASE)
+
+    text=re.sub(r'^.*?ap\s*',"",text, flags=re.IGNORECASE)
 
 
 
