@@ -7,13 +7,23 @@ import re
 print('entro2')
  
 def clean_text(text):
-  
+    
+    text = text.lower()
+    
+    text=re.sub(r'cliene', "cliente", text)
+
     text=re.sub(r".*// cliente", " ", text, flags=re.IGNORECASE)
+
+    text=re.sub(r".*com", " ", text, flags=re.IGNORECASE)
+    text=re.sub(r".*com", " ", text, flags=re.IGNORECASE)
+    
+
+    text=re.sub(r".*//cliente", " ", text, flags=re.IGNORECASE)
 
 
     text=re.sub(r'No exitoso - RF-', "otros", text) 
-    text = text.lower()
-    #text = re.sub(r'[^\w\s]', '', re.sub(r'[áéíóú]', lambda m: {'á':'a', 'é':'e', 'í':'i', 'ó':'o', 'ú':'u'}[m.group(0)], text))
+    
+    text = re.sub(r'[^\w\s]', '', re.sub(r'[áéíóú]', lambda m: {'á':'a', 'é':'e', 'í':'i', 'ó':'o', 'ú':'u'}[m.group(0)], text))
   
     text =re.sub(r'ù', 'u', text)
     text = re.sub(r"[0-9]", "", text)
@@ -57,7 +67,7 @@ def clean_text(text):
 
     text=re.sub(r'^.*?cliente quiere\s*',"",text, flags=re.IGNORECASE)
     
-  
+    text=re.sub(r'^.*?el indica*',"",text, flags=re.IGNORECASE)
     
     
 
@@ -65,45 +75,22 @@ def clean_text(text):
 
 
 
-    text =re.sub(r'\b\w*gmail\w*\b', '', text)
-    text =re.sub(r'\b\w*hotmail\w*\b', '', text)
-
-
-   
-    text=re.sub(r'noviembre', "", text)
-    text=re.sub(r'diciembre', "", text)
-    text=re.sub(r'febrero', "", text)
-    #text=re.sub(r'enero', "", text)
-    text=re.sub(r'marzo', "", text)
-    text=re.sub(r'abril', "", text)
-    text=re.sub(r'mayo', "", text)
-    text=re.sub(r'junio', "", text)
-    text=re.sub(r'julio', "", text)
-    text=re.sub(r'agosto', "", text)
-    text=re.sub(r'mayo', "", text)
-    text=re.sub(r'septiembre', "", text)
-    text=re.sub(r'noviembre', "", text)
-    text=re.sub(r'diciembre', "", text)
-    text=re.sub(r'octubre', "", text)
-    text=re.sub(r'iva', "", text)
-    
-    
-    text=re.sub(r'pretensión', "pretension", text)
 
 
     
-    text=re.sub(r'^.*?(ASUNTO:)', r'\1', text)
-    text=re.sub(r'^.*?(descripcion:)', r'\1', text)
-    text=re.sub(r'^.*?(\\ cliente)', r'\1', text)
+    #text=re.sub(r'^.*?(ASUNTO:)', r'\1', text)
+    #text=re.sub(r'^.*?(descripcion:)', r'\1', text)
+    #text=re.sub(r'^.*?(\\ cliente)', r'\1', text)
 
 
-    text=re.sub(r'^.*?(FACTURADOS,)', r'\1', text)
-    text=re.sub(r'^.*?(APP MIETB//)', r'\1', text)
+    #text=re.sub(r'^.*?(FACTURADOS,)', r'\1', text)
+    #text=re.sub(r'^.*?(APP MIETB//)', r'\1', text)
 
     
 
-    text=re.sub(r'\baseg lt\b', '', text)
+    #text=re.sub(r'\baseg lt\b', '', text)
     
+  
 
 
  
@@ -111,11 +98,14 @@ def clean_text(text):
     
     text = re.sub(r"LEY 1755", "", text)
     text = re.sub(r"Ley 1755", "", text)
-    text = re.sub(r"ID", "", text)
+    #text = re.sub(r"ID", "", text)
     
     text = re.sub(r"numeor", "", text)
     text = re.sub(r"MDM-FIBRA-", "", text)
-    text=re.sub(r'^.*?de la llamada\s*', "", text)
+
+    #text=re.sub(r'^.*?de la llamada\s*', "", text)
+
+
     text = re.sub(r'linea', '', text)
     text = re.sub(r'back', '', text)
     text = re.sub(r'Cuenta', '', text)
@@ -131,6 +121,7 @@ def clean_text(text):
     text = re.sub(r'GESTION PROACTIVA', '', text)
     text = re.sub(r'lte', '', text)
     text = re.sub(r'whatsapp', '', text)
+   
     text = re.sub(r'DOCUMENTO', '', text)
     text = re.sub(r'Número contacto', '', text)
     text = re.sub(r'NA', '', text)
@@ -192,7 +183,7 @@ def clean_text(text):
     text = re.sub(r"soporte primer nivel", "primernivel", text)
     text = re.sub(r" ________________________________________", "", text)
     text = re.sub(r"__________________________", "", text)
-    text=re.sub("(\s\d+)"," ",text)
+    #text=re.sub("(\s\d+)"," ",text)
     text = re.sub(r"cc", " ", text)
     text = re.sub(r"semáforo", "semaforo", text)
     text = re.sub(r"ONT NO ENCIENDE / FALLA", "semaforo", text)
@@ -275,8 +266,8 @@ def clean_text(text):
     ########
     text = re.sub(r'\binfo\b', 'informacion', text)
     text = re.sub(r'\binf\b', 'informacion', text)
-
-    text = re.sub(r'informaci', 'informacion', text)
+    text = re.sub(r'\bfac\b', 'factura', text)
+    #text = re.sub(r'informaci', 'informacion', text)
     text = re.sub(r"ntiene", "tiene", text)
     text = re.sub(r"p. m.", "", text)
 
@@ -289,19 +280,21 @@ def clean_text(text):
     text = re.sub(r"por que", "porque", text)
     text = re.sub(r"actulaizacionde", "actualizacion", text)
 
+    text = re.sub(r"d ela", "de la", text)
 
     #numero documento
     #numero de conexion
     #numero de cuenta
     
     text=re.sub(r'deyavargasyahoocom', "", text)
+    text=re.sub(r'%', "", text)
+   
 
 
 
-
-    text = re.sub(r'[-()\"#/@;:<>{}`+=~|.!?,]\|_', "", text)
+    text = re.sub(r'[-()\"#/@;:%<>+{}`+=~|.!?,]\|_', "", text)
     text=text.replace("[\'","").replace("\n"," ").replace("']"," ").replace('["',"").replace('"]',"").replace("/","").replace("\', \' ;'","")
-    text=text.replace("-","").replace(","," ").replace('.'," ")
+    text=text.replace("-","").replace(","," ").replace('.'," ").replace('+',"").replace('('," ").replace(')'," ")
     text=text.replace('",'," ").replace("\',","").replace( ":\',","").replace("!","").replace(":","").replace(',"',"")
     text=text.replace("[","").replace("]","").replace("\'s","'s")
     text = text.replace("\'s", "")
