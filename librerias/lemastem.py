@@ -64,14 +64,14 @@ df = pd.read_excel('/content/PRIORIZAR/data/ListadoNombresApellidos.xlsx')
 nuevos_nombres = df['AARON'].str.lower().tolist()
 
 
-
+    
 
 
 sw_list = stopwords.words('spanish')
 sw_list += list(string.punctuation)
 sw_list += ["ion","cop","whast p","rox","in","mayerli","bermuda","feb","edwin","beymar","otalvaro","carmona","pablo",
-"aguirre","pineda"
-"ap","twitter","whastapp","ciudadania","b","dg","ion","app","elmer","usuario","aaron"
+"aguirre","pineda","noviembre","enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","diciembre"
+"ap","twitter","whastapp","ciudadania","b","dg","ion","app","elmer","usuario","aaron","id",
 "yohana poveda","dirar","ud","atar","jorge","alejandro","sterns","mogollon","edwin","beymar","otalvaro","carmona","ciudadania","ap","a","saaw"
 "z","''", '""', '...', '``', '’', '“','’','nn','él','tú','septiembre','hra','agosto','mayo','junio','julio','octubre','diciembre','enero','febrero',
 'marzo','abril','queda','bot','$','(','correo',"email" ,"f","id",'whats','sur','”','to','titular', 'in','nombre' ,'co','sr','bis','‘','sur in', 'ac',
@@ -79,7 +79,8 @@ sw_list += ["ion","cop","whast p","rox","in","mayerli","bermuda","feb","edwin","
 '—', '_','int','gmail','com','@','re','ok','from','min','reply','avg','max','time','manifiesta','ttl','bytes','seq','ms','Reportó','Descripcion','última','atención',
 'a','su','línea','linea','Gracias','preferirnos','gracias','comunicación','en','la','que','cédula','cedula','aga','luego','número','documento','indica',
 'sido','aclara','solo','encuentra','comunica','linar','direccion','whatsapp','what','dirección','dire ion','pqr','juan','jose','menjura','cortes','sra',
-'angela','rf','ref','ipc','cc','etb','crm','ct','chat','megas','tec','ftth']
+'angela','rf','ref','ipc','cc','etb','crm','ct','chat','megas','tec','ftth',"p"]
+
 
 
 sw_list = sw_list +palabras_unicas
