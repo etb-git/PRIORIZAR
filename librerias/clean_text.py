@@ -14,8 +14,8 @@ def clean_text(text):
 
     text=re.sub(r".*// cliente", " ", text, flags=re.IGNORECASE)
 
-    text=re.sub(r".*com", " ", text, flags=re.IGNORECASE)
-    text=re.sub(r".*com", " ", text, flags=re.IGNORECASE)
+    #text=re.sub(r".*com", " ", text, flags=re.IGNORECASE)
+    #text=re.sub(r".*com", " ", text, flags=re.IGNORECASE)
     
 
     text=re.sub(r".*//cliente", " ", text, flags=re.IGNORECASE)

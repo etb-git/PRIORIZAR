@@ -97,7 +97,7 @@ sw_set = set(sw_list)
 
 
 
-nlp = spacy.load('es_core_news_sm', disable=['tagger', 'parser', 'ner'])
+nlp = spacy.load('download es_core_news_lg', disable=['tagger', 'parser', 'ner'])
 
 
 
