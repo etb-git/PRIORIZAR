@@ -84,7 +84,7 @@ sw_list += ["ion","cop","whast p","rox","in","mayerli","bermuda","feb","edwin","
 
 
 
-#sw_list = sw_list +palabras_unicas
+sw_list_1 = sw_list +nuevos_nombres
 
 #sw_list=sw_list+nuevos_nombres
 
@@ -95,7 +95,7 @@ sw_list += ["ion","cop","whast p","rox","in","mayerli","bermuda","feb","edwin","
 exclude_words = ['ni', 'no', 'sin']
 
 
-sw_set = set(sw_list)
+sw_set = set(sw_list_1)
 
 sw_set = [word for word in sw_set if word not in exclude_words]
 
