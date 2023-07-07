@@ -80,7 +80,7 @@ sw_list += ["ion","cop","whast p","rox","in","mayerli","bermuda","feb","edwin","
 '—', '_','int','gmail','com','@','re','ok','from','min','reply','avg','max','time','manifiesta','ttl','bytes','seq','ms','Reportó','Descripcion','última','atención',
 'a','su','línea','linea','Gracias','preferirnos','gracias','comunicación','en','la','que','cédula','cedula','aga','luego','número','documento','indica',
 'sido','aclara','solo','encuentra','comunica','linar','direccion','whatsapp','what','dirección','dire ion','pqr','juan','jose','menjura','cortes','sra',
-'angela','rf','ref','ipc','cc','etb','crm','ct','chat','megas','tec','ftth',"p"]
+'angela','rf','ref','ipc','cc','etb','crm','ct','chat','megas','tec','ftth',"p","ss","or"]
 
 
 
@@ -89,15 +89,20 @@ sw_list += ["ion","cop","whast p","rox","in","mayerli","bermuda","feb","edwin","
 #sw_list=sw_list+nuevos_nombres
 
 
-exclude_words = {'ni', 'no', 'sin'}
 
 # Remover las palabras de exclusión de las stop words
-custom_stop_words = sw_list - exclude_words
+
+exclude_words = ['ni', 'no', 'sin']
 
 
-sw_set = set(custom_stop_words)
+sw_set = set(sw_list)
 
-print(sw_list)
+sw_set = [word for word in sw_set if word not in exclude_words]
+
+
+
+
+print(sw_set)
 
 
 nlp = spacy.load('es_core_news_lg', disable=['tagger', 'parser', 'ner'])
