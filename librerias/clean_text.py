@@ -235,5 +235,11 @@ def clean_text(text):
     text = re.sub(r"correo", "", text)
     text = re.sub(r"\S+@\S+\s+\S+", "", text)
 
+    text = re.sub(r'"', '', text)
+
+    text = re.sub(r'x', 'por', text)
+
+    
+
 
     return text
