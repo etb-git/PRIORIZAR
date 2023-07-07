@@ -208,6 +208,9 @@ def clean_text(text):
 
     text = re.sub(r"por que", "porque", text)
     text = re.sub(r"actulaizacionde", "actualizacion", text)
+    
+    text = re.sub(r"paramot", "paramount", text)
+    
 
     #text = re.sub(r"d ela", "de la", text)
 
