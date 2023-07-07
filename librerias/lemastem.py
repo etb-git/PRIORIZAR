@@ -69,6 +69,7 @@ nuevos_nombres = df['AARON'].str.lower().tolist()
 
 sw_list = stopwords.words('spanish')
 sw_list += list(string.punctuation)
+
 sw_list += ["ion","cop","whast p","rox","in","mayerli","bermuda","feb","edwin","beymar","otalvaro","carmona","pablo",
 "aguirre","pineda","noviembre","enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","diciembre"
 "ap","twitter","whastapp","ciudadania","b","dg","ion","app","elmer","usuario","aaron","id",
@@ -83,18 +84,20 @@ sw_list += ["ion","cop","whast p","rox","in","mayerli","bermuda","feb","edwin","
 
 
 
-sw_list = sw_list +palabras_unicas
+#sw_list = sw_list +palabras_unicas
 
-sw_list=sw_list+nuevos_nombres
-
-
-
-print(len(sw_list))
+#sw_list=sw_list+nuevos_nombres
 
 
-sw_set = set(sw_list)
+exclude_words = {'ni', 'no', 'sin'}
+
+# Remover las palabras de exclusión de las stop words
+custom_stop_words = sw_list - exclude_words
 
 
+sw_set = set(custom_stop_words)
+
+print(sw_list)
 
 
 nlp = spacy.load('es_core_news_lg', disable=['tagger', 'parser', 'ner'])
